@@ -1,0 +1,89 @@
+.ino    
+    -sis. luces (mtrix led, hi-vol front led)
+    -monitor control ps (4)
+    
+
+.py
+    -pacman:
+        :eliminar la posibilidad de los fantasmas de poder ir hacia atras (por lo menos al empezar)
+            :o se le quita la posibilidad completamente de ir hacia atras
+            :o se hace que en ese area fuerce a girar o a derecha o a izquierda (puede generar bugs, cuidao)
+
+
+        :animacion pacman (wakawaka main desde la beta)
+            :pacman moviendose
+            :pacman muere
+
+        :crear cerezas (no se lo que hacen pero bueno cuantas mas cosas tenga el pacman pues mejor)
+
+
+        :crear vidas (que aparezcan random por el mapa de vez en cuando like las cerezas)
+            --al pasar entre 45 y 55 segundos se activa la funcion crear vida
+            --si el jugador tiene menos de 4 vidas, crea una vida en un lugar random que parpadee durante 12s
+                ---si spawnea en un muro o chocando con el jugador randomiza otra vez hasta que no choque con nada (ni con el spawn de los fantasmas) 
+            --el parpadeo sera más rapido cuanto menos tiempo quede para recoger la vida
+
+
+        :hacer varios mapas, por lo menos tener 3 en total (esto es una fumada grande pero bueno)
+        
+
+
+
+
+
+
+
+
+        self.new_direction = random.randint(1, 2)
+        if self.direction == 0:
+            if self.new_direction == 1:
+                self.direcction = 1
+            if self.new_direction == 2:
+                self.direcction = 2
+
+        if self.direction == 1:
+            if self.new_direction == 1:
+                self.direcction = 3
+            if self.new_direction == 2:
+                self.direcction = 0
+
+        if self.direction == 2:
+            if self.new_direction == 1:
+                self.direcction = 0
+            if self.new_direction == 2:
+                self.direcction = 3
+
+        if self.direction == 3:
+            if self.new_direction == 1:
+                self.direcction = 2
+            if self.new_direction == 2:
+                self.direcction = 1
+
+
+
+-si pacman esta muerto
+    :no mover, no dibuar...
+-si pacman no esta muerto
+    :mover o dibujar en el mapa
+
+-si fantasma esta muerto
+    :no mover no dibujar
+-si fantasma no esta muerto
+    :mover,dibujar...
+
+
+
+
+
+
+#4
+    [8, 28, ññ, zz, down_right],
+    [68, 87, ññ, zz, up_left],
+    [127, 147, ññ, zz, up_right],
+    [187, 207, ññ, zz, cross],
+    [247, 266, ññ, zz, down_left],
+    [307, 326, ññ, zz, down_right],
+    [367, 386, ññ, zz, cross],
+    [427, 446, ññ, zz, up_left],
+    [489, 506, ññ, zz, up_right],
+    [549, 568, ññ, zz, down_left],
