@@ -825,6 +825,7 @@ class Player(pygame.sprite.Sprite):
         else:
             self.walk = False
 
+    
     # draw pacman
     def draw(self):
         self.rect = self.image.get_rect(topleft=(self.x, self.y))
