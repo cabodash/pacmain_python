@@ -4,7 +4,7 @@ class Player(pygame.sprite.Sprite):
         # Call the parent's constructor
         pygame.sprite.Sprite.__init__(self)
         self.x = 288
-        self.y = 316
+        self.y = 376
         self.imageSource = pygame.image.load(
             'images/player.png').convert_alpha()
         self.image = self.imageSource
@@ -34,7 +34,7 @@ class Player(pygame.sprite.Sprite):
             self.direction = 2
             self.walk = True
             if self.died_timer:
-                self.image = void
+                player.image = void
             else:
                 self.image = pygame.transform.rotate(self.imageSource, 360)
 
@@ -43,7 +43,7 @@ class Player(pygame.sprite.Sprite):
             self.direction = 1
             self.walk = True
             if self.died_timer:
-                self.image = void
+                player.image = void
             else:
                 self.image = pygame.transform.rotate(self.imageSource, 180)
 
@@ -52,7 +52,7 @@ class Player(pygame.sprite.Sprite):
             self.direction = 0
             self.walk = True
             if self.died_timer:
-                self.image = void
+                player.image = void
             else:
                 self.image = pygame.transform.rotate(self.imageSource, 90)
 
@@ -61,13 +61,14 @@ class Player(pygame.sprite.Sprite):
             self.direction = 3
             self.walk = True
             if self.died_timer:
-                self.image = void
+                player.image = void
             else:
                 self.image = pygame.transform.rotate(self.imageSource, 270)
 
         else:
             self.walk = False
 
+    
     # draw pacman
     def draw(self):
         self.rect = self.image.get_rect(topleft=(self.x, self.y))
@@ -98,4 +99,4 @@ class Player(pygame.sprite.Sprite):
     def animation_dead(self):
         
         self.x = 303 - 15
-        self.y = 316
+        self.y = player_y
