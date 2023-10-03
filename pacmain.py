@@ -4,6 +4,9 @@ from Global import *
 from Map import *
 from Player import Player
 from Ghost import Ghost
+from Wall import Wall
+from Ball import Balls
+from Live import Live
 
 # ----------Gb variables---------- #
 

@@ -1,7 +1,7 @@
 import pygame
 
 # Map live's class
-class Lives(pygame.sprite.Sprite):
+class Live(pygame.sprite.Sprite):
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
         #img
